@@ -1,4 +1,4 @@
-import {Directive, Input, HostListener, ComponentFactoryResolver, ComponentRef, ViewContainerRef, OnInit, OnDestroy, OnChanges, SimpleChanges, ElementRef, ViewChild} from '@angular/core';
+import {Directive, Input, HostListener, ComponentFactoryResolver, ComponentRef, ViewContainerRef, OnInit, OnDestroy, OnChanges, SimpleChanges, ElementRef} from '@angular/core';
 import {ImageZoomContainer} from './image-zoom-container.component';
 import {ImageZoomLens} from './image-zoom-lens.component';
 
@@ -344,7 +344,7 @@ export class ImageZoom implements OnInit, OnDestroy, OnChanges {
             event.stopPropagation();
             event.preventDefault();
 
-            var pos = ((event.wheelDeltaY | event.detail * -1) != 0) ?
+            let pos = ((event.wheelDeltaY | event.detail * -1) != 0) ?
             (event.wheelDeltaY | event.detail * -1) :
             (event.deltaY | event.wheelDelta);
 
